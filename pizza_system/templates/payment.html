@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container text-center d-flex justify-content-center align-items-center min-vh-100">
+    <div class="bg-white shadow-lg rounded p-5 text-center" style="max-width: 400px;">
+
+        <h2>Your Payment Details</h2>
+
+        <br>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

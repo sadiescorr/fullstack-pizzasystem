@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User Signup
+{% endblock %}
+
+{%  block content %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-5 shadow-lg" style="width: 450px;">
+        <h2>Create An Account for Your Order</h2>
+        <form method="POST"> 
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-dark w-100 mt-3"">SUBMIT</button>
+        </form>
+    </div>
+</div>
+{%  endblock %}

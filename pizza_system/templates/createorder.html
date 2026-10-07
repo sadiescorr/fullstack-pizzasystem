@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container text-center d-flex justify-content-center align-items-center min-vh-100">
+    <div class="bg-white shadow-lg rounded p-5 text-center" style="max-width: 400px;">
+
+        <h2>Create Your Pizza!</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+
+            <button type="submit" class="btn btn-dark w-100 mt-3">Place Order!</button>
+        </form>
+    </div>    
+</div>
+
+{% endblock %}

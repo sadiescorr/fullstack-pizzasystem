@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class="container text-center d-flex justify-content-center align-items-center min-vh-100">
+    <div class="bg-white shadow-lg rounded p-5 text-center" style="max-width: 400px;">
+    
+        <h2>Order Placed!</h2> 
+        <h4>YOUR PIZZA IS ON ROUTE....🛵</h4>
+
+        <p>A Confirmation Email has been sent to {{ order.user }}</p>
+        <p>Ordered at {{ order.order_time }}</p>
+        <p>Your Pizza is on its way to {{ order.address }}</p>
+        <p><strong>YOU ORDERED:</strong> <em> A {{ pizza.size }}, {{ pizza.crust }} Crust Pizza with {{ pizza.sauce }} Sauce, {{ pizza.cheese }} Cheese and
+            {% for topping in pizza.toppings.all %}
+                {{ topping.name }} 
+            {% endfor %}</em></p>
+        
+        <div class="d-grid gap-2">
+            <a class="btn btn-dark w-100 mt-3" href="/orderhistory" role="button">VIEW PREVIOUS ORDERS</a>
+            <a class="btn btn-dark w-100 mt-3" href="/createorder" role="button">ORDER ANOTHER</a>
+        </div>
+
+    </div>
+</div>
+    
+{% endblock %}
